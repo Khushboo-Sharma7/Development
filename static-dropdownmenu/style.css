@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.logo i{
+    margin-top: 40px;
+    margin-left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+.main-logo-slide{
+    opacity: 0;
+}
+.logo i:hover{
+    transform: scale(1.2);
+}
+#main-logo:checked ~ .nav-bar{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.nav-bar{
+    margin-top: 40px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s linear;
+}
+.nav-bar div i{
+    font-size: 30px;
+    cursor: pointer;
+}
+.nav-bar div a{
+    font-size: 28px;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+.check{
+    opacity: 0;
+}
+.nav-bar div i:hover{
+    transform: scale(1.2)
+}
+.nav-bar div:hover a{
+    opacity: 1;
+    box-shadow: 0 0 10px slateblue;
+    border-radius: 10px;
+}
+.drop {
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  padding: 10px;
+}
+
+.check:checked + label + a + .drop {
+  display: flex;
+}
+.nav-bar > div {
+  position: relative;
+}
